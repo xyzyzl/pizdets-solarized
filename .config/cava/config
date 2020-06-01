@@ -1,0 +1,7 @@
+[general]
+# set number of bars
+bars = 0 # default
+# set width of bars
+bar_width = 8
+# set how far the bars are spaced out
+bar_spacing = 4

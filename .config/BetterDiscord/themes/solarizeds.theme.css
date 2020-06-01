@@ -1,0 +1,456 @@
+/**
+ * @name Solarized Theme
+ * @description LMAO SOLARIZED
+ * @author idk
+ * @version 0.1
+ * @source https://gitlab.com/tacticalpha/solarized-discord
+ * @requires Glasscord>=0.0.5
+ */
+/*
+   Copyright 2020 AryToNeX
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+       http://www.apache.org/licenses/LICENSE-2.0
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
+@keyframes voice-speaking {
+  0% {
+    box-shadow: inset 0 0 0 3px #268bd2;
+  }
+  100% {
+    box-shadow: inset 0 0 0 3px #d33682;
+  }
+}
+@keyframes spinner-typing {
+  0% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes notice-animation {
+  0% {
+    background-color: #cb4b16;
+  }
+  100% {
+    background-color: #b58900;
+  }
+}
+@keyframes rainbow-anim {
+  0% {
+    background-position: 0 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0 82%;
+  }
+}
+@keyframes white-to-grey-shadow {
+  0% {
+    text-shadow: -1px -1px 0 #EEEEEE, 1px -1px 0 #EEEEEE, -1px 1px 0 #EEEEEE, 1px 1px 0 #EEEEEE;
+  }
+  100% {
+    text-shadow: -1px -1px 0 #212121, 1px -1px 0 #212121, -1px 1px 0 #212121, 1px 1px 0 #212121;
+  }
+}
+*::selection {
+  background-color: #2aa198;
+  color: #eee8d5;
+}
+.rainbowbg {
+  background: linear-gradient(124deg, #dc322f, #cb4b16, #b58900, #859900, #268bd2, #6c71c4, #d33682);
+  background-size: 1200% 1200%;
+  animation: rainbow-anim 24s ease infinite;
+}
+.rainbowname {
+  background: linear-gradient(124deg, #dc322f, #cb4b16, #b58900, #859900, #268bd2, #6c71c4, #d33682);
+  background-size: 1200% 1200%;
+  animation: rainbow-anim 24s ease infinite;
+  border-radius: 5px;
+}
+.rainbowname .user-name {
+  font-weight: bold;
+}
+.status-online {
+  background-color: #268bd2;
+}
+.status-idle {
+  background-color: #b58900;
+}
+.status-dnd {
+  background-color: #cb4b16;
+}
+.popout .status-picker {
+  background-color: #fdf6e3;
+}
+.popout .status-picker .status-icon-text {
+  color: #586e75;
+}
+.popout .status-picker .helper {
+  color: #839496;
+}
+.popout .status-picker .popout-menu-seperator {
+  display: none;
+}
+.badge {
+  color: #073642 !important;
+  background-color: #eee8d5 !important;
+}
+.app .notice {
+  animation: notice-animation 3000ms ease-in-out alternate infinite;
+}
+.app .guilds {
+  background-color: #002b36;
+}
+.app .guilds .guild-inner {
+  background-color: #073642;
+}
+.app .btn-friends,
+.app .channel,
+.app .guild-channels,
+.app .guild-channels,
+.app .guild-channels-wrapper,
+.app .guild-header > header,
+.app .private-channels {
+  background-color: #002b36 !important;
+}
+.app #friends {
+  background-color: #073642;
+}
+.app #friends .friends-header {
+  background-color: #002b36;
+}
+.app #friends .friends-header .tab-bar .tab-bar-item {
+  color: #839496;
+  transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
+}
+.app #friends .friends-header .tab-bar .tab-bar-item.selected {
+  color: #586e75;
+  background-color: #eee8d5;
+}
+.app #friends .friends-table {
+  background-color: #073642;
+}
+.app #friends .friends-table .friends-table-header {
+  border-bottom-color: #586e75;
+}
+.app #friends .friends-table .friends-table-header .friends-column {
+  color: #93a1a1;
+}
+.app #friends .friends-table .friends-table-header .friends-column-separator {
+  opacity: 0;
+}
+.app #friends .friends-table .friends-table-body .friends-row {
+  margin-left: 20px;
+  padding: 10px 16px;
+  transition: background-color 150ms ease-in-out;
+}
+.app #friends .friends-table .friends-table-body .friends-row .discriminator {
+  color: #eee8d5;
+  opacity: 0;
+  visibility: visible !important;
+  transition: opacity 150ms ease-in-out;
+}
+.app #friends .friends-table .friends-table-body .friends-row:hover .discriminator {
+  opacity: 0.6;
+}
+.app #friends .friends-table .friends-table-body .friends-row:not(:first-child) {
+  border-top: none;
+}
+.app #friends .friends-table .friends-table-body .friends-row:nth-child(odd) {
+  background-color: #002b36;
+}
+.app #friends .friends-table .friends-table-body .friends-row:hover {
+  background-color: #005469;
+}
+.app #friends .friends-table .friends-table-body .friends-row span {
+  color: #eee8d5;
+}
+.app #friends .friends-table .friends-table-body .friends-row .friends-action {
+  visibility: visible !important;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+.app #friends .friends-table .friends-table-body .friends-row .friends-action-voice-call {
+  asdgerdh: 32;
+  background-color: #002b36;
+}
+.app #friends .friends-table .friends-table-body .friends-row:hover .friends-action {
+  opacity: 1;
+}
+.app .search-bar {
+  background-color: #002b36;
+}
+.app .search-bar .search-bar-inner {
+  background-color: #073642;
+}
+.app .search-bar .search-bar-inner input::-webkit-input-placeholder {
+  color: #93a1a1;
+}
+.app .private-channels {
+  color: #93a1a1 !important;
+}
+.app .private-channels .channel .channel-name {
+  color: #eee8d5;
+}
+.app .channels-wrap {
+  background-color: #002b36;
+}
+.app .channels-wrap > div:first-child {
+  background-color: #002b36;
+}
+.app .channel > * {
+  color: #eee8d5 !important;
+}
+.app .channel > * > :not(.channel-voice) {
+  opacity: 1 !important;
+}
+.app .channel.selected {
+  background: #002b36 !important;
+}
+.app .channel .channel-arrow,
+.app .channel .channel-name::before {
+  color: #859900 !important;
+}
+.app .channel > :not(.channel-voice):not(.channel-voice-states):not(.channel-name) :hover {
+  transform: scale(1.05);
+}
+.app .channel.selected > a > span {
+  opacity: 1 !important;
+}
+.app .avatar-small {
+  border-radius: 25% !important;
+}
+.app .new-messages-indicator {
+  background-color: #dc322f !important;
+}
+.app .title-wrap {
+  border-bottom: 0 !important;
+}
+.app .guild-header > header:after {
+  height: 0 !important;
+}
+.app .account {
+  border: 1px !important;
+  border-bottom: 0 !important;
+  background-color: #002b36 !important;
+}
+.app .btn-deafen,
+.app .btn-disconnect,
+.app .btn-info,
+.app .btn-mute,
+.app .btn-settings {
+  background-color: #073642 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-right: 0 !important;
+}
+.app .btn-deafen:after,
+.app .btn-disconnect:after,
+.app .btn-info:after,
+.app .btn-mute:after,
+.app .btn-settings:after {
+  margin-right: 0 !important;
+}
+.app .channel-members-wrap {
+  position: absolute;
+  right: 0;
+  min-width: 100px;
+  height: 100%;
+}
+.app .channel-members-wrap .channel-members {
+  background-color: #002b36 !important;
+}
+.app .channel-members-wrap .channel-members > h2 {
+  color: #eee8d5 !important;
+  text-align: center;
+  position: relative;
+  max-width: 0px;
+  opacity: 0;
+  margin: 0;
+  overflow: hidden;
+  max-height: 1em;
+  transition: max-width 450ms ease-in-out, max-height 250ms ease-in-out, opacity 450ms ease-in-out, margin 450ms ease-in-out, padding 450ms ease-in-out;
+}
+.app .channel-members-wrap .channel-members > h2:after {
+  position: absolute;
+  content: " ";
+  height: 1px;
+  width: 70%;
+  top: 140%;
+  left: 15%;
+  background-color: #93a1a1;
+}
+.app .channel-members-wrap .channel-members:hover > h2 {
+  opacity: 1;
+  max-width: 220px;
+  margin-top: 29px;
+  max-height: 2em;
+}
+.app .channel-members-wrap .channel-members > .member .avatar-small {
+  display: block;
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  background-size: 40px;
+  transition: margin 450ms ease-in-out, width 450ms ease-in-out, height 450ms ease-in-out, background-size 450ms ease-in-out;
+}
+.app .channel-members-wrap .channel-members > .member .member-inner {
+  transition: width 450ms ease-in-out, opacity 450ms ease-in-out;
+  width: 0;
+  opacity: 0;
+  margin-left: 10px;
+}
+.app .channel-members-wrap .channel-members:hover > .member .avatar-small {
+  width: 30px;
+  height: 30px;
+  background-size: 30px;
+}
+.app .channel-members-wrap .channel-members:hover > .member .member-inner {
+  width: 150px;
+  opacity: 1;
+}
+.app .channel-members-wrap ~ .flex-spacer {
+  padding-right: 110px;
+}
+.app .chat > .content > *:first-child {
+  padding-right: 110px;
+}
+.app .messages {
+  background-color: #073642 !important;
+}
+.app code {
+  background-color: #eee8d5;
+}
+.app code .hljs-keyword {
+  color: #859900;
+}
+.app code .hljs-title {
+  color: #268bd2;
+}
+.app .message-group .username-wrapper::after {
+  padding: 0 2px;
+  border-radius: 4px;
+  color: #fff;
+  margin-left: 20px;
+  text-shadow: 0 0 4px #000;
+  padding-bottom: 1.5px;
+  font-size: 14px;
+}
+.app .message-group .avatar-large[style*='159023220140277760'] ~ .comment .username-wrapper,
+.app .message-group .avatar-large[style*='197565997618692096'] ~ .comment .username-wrapper {
+  background: linear-gradient(124deg, #dc322f, #cb4b16, #b58900, #859900, #268bd2, #6c71c4, #d33682);
+  background-size: 1200% 1200%;
+  animation: rainbow-anim 24s ease infinite;
+  border-radius: 5px;
+  padding: 1px 7px;
+  font-weight: bold;
+}
+.app .message-group .avatar-large[style*='159023220140277760'] ~ .comment .username-wrapper .user-name,
+.app .message-group .avatar-large[style*='197565997618692096'] ~ .comment .username-wrapper .user-name {
+  font-weight: bold;
+}
+.app .message-group .avatar-large[style*='159023220140277760'] ~ .comment .username-wrapper .user-name,
+.app .message-group .avatar-large[style*='197565997618692096'] ~ .comment .username-wrapper .user-name {
+  text-shadow: -1px -1px 0 #303030, 1px -1px 0 #303030, -1px 1px 0 #303030, 1px 1px 0 #303030;
+}
+.app .mention {
+  color: #268bd2 !important;
+}
+.app .timestamp {
+  color: #93a1a1 !important;
+}
+.app .markup {
+  color: #eee8d5 !important;
+}
+.app .content > .flex-spacer > form {
+  background-color: #002b36 !important;
+  margin: 0 !important;
+  padding: 0 20px !important;
+}
+.app .title-wrap {
+  background-color: #002b36 !important;
+}
+.app .title-wrap button {
+  background-color: #073642 !important;
+}
+.app .title-wrap .channel-name::before {
+  color: #859900 !important;
+}
+.app .scroller::-webkit-scrollbar {
+  width: 8px !important;
+}
+.app .scroller::-webkit-scrollbar-thumb,
+.app .scroller::-webkit-scrollbar-track-piece {
+  border: 0 !important;
+}
+.app .scroller::-webkit-scrollbar-track-piece {
+  background-color: #002b36 !important;
+}
+.app .scroller::-webkit-scrollbar-thumb {
+  background-color: #586e75 !important;
+}
+.emoji-picker {
+  background-color: #073642 !important;
+}
+.emoji-picker .search-bar {
+  background-color: #073642 !important;
+}
+.emoji-picker .search-bar input {
+  color: #eee8d5 !important;
+}
+.emoji-picker .sticky-header {
+  background-color: #073642 !important;
+}
+.emoji-picker .categories .item.selected {
+  border-bottom-color: #b58900 !important;
+}
+.unread:before {
+  background-color: #b58900 !important;
+  width: 9px !important;
+}
+.bot-tag {
+  position: relative !important;
+  background: #2aa198 !important;
+  visibility: hidden !important;
+  text-transform: none !important;
+}
+.bot-tag:after {
+  position: absolute !important;
+  display: inline !important;
+  content: 'ROBOT';
+  visibility: visible;
+  background-color: #6c71c4;
+  padding: 1px 3px;
+  border-radius: 4px;
+  left: 0 !important;
+  top: 0 !important;
+}
+.typing {
+  background-color: #002b36 !important;
+}
+#voice-connection {
+  background-color: #002b36 !important;
+  border: 0 !important;
+}
+.ui-call-avatar-border.voice {
+  transition: box-shadow 150ms ease-in-out;
+  box-shadow: inset 0 0 0 3px #2aa198;
+  border-radius: 50%;
+}
+.ui-call-avatar-border.voice.speaking {
+  animation: voice-speaking 0.75s ease-in-out infinite alternate;
+  transition: box-shadow 150ms ease-in-out;
+}

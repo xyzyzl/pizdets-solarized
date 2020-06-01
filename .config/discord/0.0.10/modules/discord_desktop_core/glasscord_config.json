@@ -1,0 +1,13 @@
+{
+  "windowProps": {
+    "frame": false
+  },
+  "modules": {
+    "Discord": {
+      "enabled": true,
+      "config": {
+        "titlebar": "osx"
+      }
+    }
+  }
+}
